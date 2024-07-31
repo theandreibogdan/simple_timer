@@ -1,2 +1,1 @@
-# simple_timer
-Simple Timer That Can Be Easily Embed Into Notion
+Just copy the link to this app, and put it into Notion Embed, and now you have a timer in Notion.

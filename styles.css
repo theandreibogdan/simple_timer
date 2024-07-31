@@ -1,0 +1,108 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-color: #f0f1ff;
+}
+
+h1 {
+  margin: 0;
+}
+
+.floating-box {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 40px;
+  margin-top: 100px;
+  padding: 50px;
+
+  border-radius: 20px;
+
+  background-color: #ffffff;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+
+  gap: 10px;
+}
+
+.btn {
+  padding: 15px;
+  border-radius: 20px;
+  border: none;
+
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.btn-start {
+  background-color: rgb(28, 156, 92);
+}
+
+.btn-start:hover {
+  background-color: rgb(25, 139, 82);
+  cursor: pointer;
+}
+
+.btn-stop {
+  background-color: rgb(255, 88, 88);
+}
+
+.btn-stop:hover {
+  background-color: rgb(215, 76, 76);
+  cursor: pointer;
+}
+
+.btn-reset {
+  background-color: rgb(87, 87, 255);
+}
+
+.btn-reset:hover {
+  background-color: rgb(75, 75, 215);
+  cursor: pointer;
+}
+
+.clock {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+
+  gap: 10px;
+
+  height: 60px;
+}
+
+.clock-p {
+  font-size: 52px;
+  margin: 0px;
+}
+
+.clock-input {
+  font-size: 52px;
+  display: inline-block;
+
+  width: 60px;
+  height: 60px;
+
+  border: none;
+
+  text-align: center;
+}
