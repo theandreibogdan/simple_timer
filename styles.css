@@ -5,6 +5,7 @@ input::-webkit-inner-spin-button {
 }
 
 * {
+  padding: 0;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -26,8 +27,8 @@ h1 {
 
   align-items: center;
 
-  gap: 40px;
-  padding: 50px;
+  gap: 20px;
+  padding: 25px;
 
   border-radius: 20px;
 
