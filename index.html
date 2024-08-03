@@ -19,31 +19,36 @@
       <div class="clock">
         <input
           class="clock-input"
-          type="number"
+          type="text"
           id="hours"
           name="hours"
+          autocomplete="off"
           placeholder="00"
         />
         <p class="clock-p">:</p>
         <input
           class="clock-input"
-          type="number"
+          type="text"
           id="minutes"
           name="minutes"
+          autocomplete="off"
           placeholder="00"
         />
         <p class="clock-p">:</p>
         <input
           class="clock-input"
-          type="number"
+          type="text"
           id="seconds"
           name="seconds"
+          autocomplete="off"
           placeholder="00"
         />
       </div>
 
       <div class="buttons">
-        <button onclick="start()" class="btn btn-start">Start</button>
+        <button id="start-btn" onclick="start()" class="btn btn-start">
+          Start
+        </button>
         <button onclick="stop()" class="btn btn-stop">Stop</button>
         <button onclick="reset()" class="btn btn-reset">Reset</button>
       </div>

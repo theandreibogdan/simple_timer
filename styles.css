@@ -57,6 +57,11 @@ h1 {
   cursor: pointer;
 }
 
+.btn-start:disabled {
+  background-color: rgba(28, 156, 92, 0.55);
+  cursor: default;
+}
+
 .btn-stop {
   background-color: rgb(255, 88, 88);
 }
@@ -89,6 +94,7 @@ h1 {
 .clock-p {
   font-size: 52px;
   margin: 0px;
+  color: rgb(146, 146, 146);
 }
 
 .clock-input {
@@ -101,4 +107,9 @@ h1 {
   border: none;
 
   text-align: center;
+}
+
+.clock-input:disabled {
+  color: black;
+  background-color: white;
 }

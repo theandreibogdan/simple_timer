@@ -2,6 +2,8 @@ var seconds_input = document.getElementById("seconds");
 var minutes_input = document.getElementById("minutes");
 var hours_input = document.getElementById("hours");
 
+var start_button = document.getElementById("start-btn");
+
 var audio = new Audio("alarm.mp3");
 
 let seconds = 0;
@@ -17,6 +19,14 @@ let counting = false;
 document.getElementById("seconds").addEventListener("keyup", updateSeconds);
 document.getElementById("minutes").addEventListener("keyup", updateMinutes);
 document.getElementById("hours").addEventListener("keyup", updateHours);
+
+function checkButtonAvailability() {
+  if (seconds == 0 && minutes == 0 && hours == 0) {
+    start_button.disabled = true;
+  } else {
+    start_button.disabled = false;
+  }
+}
 
 function stop_alarm() {
   audio.pause();
@@ -37,6 +47,14 @@ function updateSeconds() {
     seconds = newSeconds;
     seconds_input.value = seconds;
   }
+
+  if (seconds > 9) {
+    seconds_input.value = String(seconds);
+  } else {
+    seconds_input.value = "0" + String(seconds);
+  }
+
+  checkButtonAvailability();
 }
 
 function updateMinutes() {
@@ -49,18 +67,34 @@ function updateMinutes() {
     minutes = newMinutes;
     minutes_input.value = minutes;
   }
+
+  if (minutes > 9) {
+    minutes_input.value = String(minutes);
+  } else {
+    minutes_input.value = "0" + String(minutes);
+  }
+
+  checkButtonAvailability();
 }
 
 function updateHours() {
   newHours = Number(document.getElementById("hours").value);
 
-  if (newHours > 99) {
-    hours = 99;
+  if (newHours > 24) {
+    hours = 24;
     hours_input.value = hours;
   } else {
     hours = newHours;
     hours_input.value = hours;
   }
+
+  if (hours > 9) {
+    hours_input.value = String(hours);
+  } else {
+    hours_input.value = "0" + String(hours);
+  }
+
+  checkButtonAvailability();
 }
 
 function start() {
@@ -81,6 +115,7 @@ function stop() {
   counting = false;
 
   stop_alarm();
+  checkButtonAvailability();
 }
 
 function reset() {
@@ -92,11 +127,12 @@ function reset() {
   minutes = 0;
   hours = 0;
 
-  seconds_input.value = 0;
-  minutes_input.value = 0;
-  hours_input.value = 0;
+  seconds_input.value = "00";
+  minutes_input.value = "00";
+  hours_input.value = "00";
 
   counting = false;
+  checkButtonAvailability();
 }
 
 function count_time() {
@@ -125,7 +161,23 @@ function count_time() {
 }
 
 function display_time() {
-  seconds_input.value = seconds;
-  minutes_input.value = minutes;
-  hours_input.value = hours;
+  if (seconds > 9) {
+    seconds_input.value = String(seconds);
+  } else {
+    seconds_input.value = "0" + String(seconds);
+  }
+
+  if (minutes > 9) {
+    minutes_input.value = String(minutes);
+  } else {
+    minutes_input.value = "0" + String(minutes);
+  }
+
+  if (hours > 9) {
+    hours_input.value = String(hours);
+  } else {
+    hours_input.value = "0" + String(hours);
+  }
 }
+
+checkButtonAvailability();
